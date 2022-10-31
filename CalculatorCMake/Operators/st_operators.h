@@ -1,6 +1,20 @@
 #pragma once
 #include "operator.h"
 
+class unarMinusOperator : public baseOperator {
+public:
+	unarMinusOperator() {
+		_unar = true;
+		_associate = associate_t::LEFT;
+		_operatorId = '!';
+		_operatorName = "-";
+		_priority = 7;
+	}
+	double execOperation(double lValue, double rValue, error& err) override {
+		return (- 1.0) * lValue;
+	}
+};
+
 class addOperator : public baseOperator {
 public:
 	addOperator() {
@@ -58,20 +72,6 @@ public:
 			return -1;
 		}
 		return lValue / rValue;
-	}
-};
-
-class unarMinusOperator : public baseOperator {
-public:
-	unarMinusOperator() {
-		_unar = true;
-		_associate = associate_t::LEFT;
-		_operatorId = '!';
-		_operatorName = "-";
-		_priority = 7;
-	}
-	double execOperation(double lValue, double rValue, error& err) override {
-		return -1.0 * rValue;
 	}
 };
 

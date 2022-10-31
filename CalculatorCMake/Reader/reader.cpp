@@ -25,7 +25,7 @@ void reader::readString(const std::map<char, std::unique_ptr<baseOperator>>& ope
 	int i = 0;
 	const char* str = strToParse.c_str(), * strBegin = strToParse.c_str();
 	char* end;
-	double res;
+	double res = 0;
 	while (*str != '\0' && str - strBegin < strToParse.length()) {
 		if (*str >= '0' && *str <= '9') {
 			res = strtod(str, &end);

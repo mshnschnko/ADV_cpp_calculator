@@ -10,7 +10,7 @@ enum class tokenType_t {
 class token_t {
 public:
 	tokenType_t tokenType;
-	double value;
+	double value = 0;
 	std::string name;
 	char tokenID;
 };
