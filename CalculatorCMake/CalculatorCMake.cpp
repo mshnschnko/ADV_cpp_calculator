@@ -12,9 +12,10 @@ void run() {
 	const std::string exitString = "00";
 	std::string enteredString;
 	double res;
+	std::cout << "Input expression (print '00' to close programm):" << std::endl;
 	while (true) {
 		error::getErrorInstance().updateError(error::errorType_t::NO_ERR, "No error");
-		std::cout << "Input expression (print '00' to close programm): ";
+		std::cout << "expression: ";
 		std::getline(std::cin, enteredString);
 		if (enteredString == exitString)
 			break;
